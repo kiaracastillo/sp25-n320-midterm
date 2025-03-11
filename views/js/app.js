@@ -10,13 +10,15 @@ const downloadReceiptBtn = document.getElementById("download-receipt");
 
 cartButtons.forEach((button) => {
 
-  button.addEventListener("click", () => {
+button.addEventListener("click", () => {
  const name = button.getAttribute("data-name");
+
 const price = parseFloat(button.getAttribute("data-price"));
     
     const existingItem = cart.find((item) => item.name === name);
  if (existingItem) {
       existingItem.quantity += 1;
+
 } else { cart.push({ name, price, quantity: 1 });
     }
 updateButtons();
